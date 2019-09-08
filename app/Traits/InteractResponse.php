@@ -11,7 +11,8 @@ trait InteractResponse
     public function decodeResponse($response)
     {
         $decodeResponse = json_decode($response);
-        return $decodeResponse->data ?? $decodeResponse;
+        // dd($decodeResponse);
+        return $decodeResponse->data->data ?? $decodeResponse->data;
     }
 
     public function checkIfErrorRespose($response)

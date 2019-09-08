@@ -15,7 +15,7 @@ trait ConsumirAPIExterna
             'base_uri' => $this->baseUri,
         ]);
 
-        if (method_exists(this, 'resolveAutorization')) {
+        if (method_exists($this, 'resolveAutorization')) {
             $this->resolveAutorization($queryParams, $formParams, $headers);
         }
 
@@ -27,11 +27,11 @@ trait ConsumirAPIExterna
 
         $response = $response->getBody()->getContents();
 
-        if (method_exists(this, 'decodeResponse')) {
+        if (method_exists($this, 'decodeResponse')) {
             $response = $this->decodeResponse($response);
         }
 
-        if (method_exists(this, 'checkIfErrorRespose')) {
+        if (method_exists($this, 'checkIfErrorRespose')) {
             $this->checkIfErrorRespose($response);
         }
 

@@ -17,4 +17,23 @@ class RadiosService
         $this->baseUri = config('services.skydata.base_uri');
     }
 
+    public function getRadios()
+    {
+        return $this->makeRequest('GET','radio');
+    }
+
+    public function getClientes()
+    {
+        return $this->makeRequest('GET','cliente');
+    }
+
+    public function getRadio($id)
+    {
+        return $this->makeRequest('GET','radio/'.$id);
+    }
+
+    public function getCliente($id)
+    {
+        return $this->makeRequest('GET','cliente/'.$id);
+    }
 }

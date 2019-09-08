@@ -16,6 +16,6 @@ class Controller extends BaseController
 
     public function __construct(RadiosService $radioService)
     {
-        $this->$radioService = $radioService;
+        $this->radioService = $radioService;
     }
 }

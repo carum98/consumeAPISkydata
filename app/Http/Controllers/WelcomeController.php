@@ -8,6 +8,8 @@ class WelcomeController extends Controller
 {
     public function showWelcomePage()
     {
-        return view('welcome');
+        $radios = $this->radioService->getRadios();
+        $clientes = $this->radioService->getClientes();
+        return view('welcome', compact('radios', 'clientes'));
     }
 }
