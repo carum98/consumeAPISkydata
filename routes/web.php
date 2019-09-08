@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', 'WelcomeController@showWelcomePage')->name('welcome');
+Route::get('/home', 'WelcomeController@showWelcomePage')->name('welcome');
 
 Auth::routes(['register' => false, 'reset' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('authorization', 'Auth\LoginController@authorization')->name('authorization');
+
 
 Route::get('/radio/{id}', 'RadioController@showRadio')->name('radio.show');
 Route::get('/cliente/{id}', 'ClienteController@showCliente')->name('cliente.show');
+Route::get('/cliente/{id}/radios', 'ClienteController@showRadiosCliente')->name('radios.cliente.show');
 
 

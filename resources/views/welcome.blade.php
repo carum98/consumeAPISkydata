@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
-    <div class="row">
-        <h2 class="display-2">Radios</h2>
-    </div>
+<div class="container">
     <div class="row">
         <div class="col-5">
+        <h2 class="display-2">Radios</h2>
             <table class="table">
                 <thead>
                 <tr>
@@ -29,6 +27,7 @@
             </table>
         </div>    
         <div class="col-5">
+                <h2 class="display-2">Clientes</h2>  
                 <table class="table">
                     <thead>
                     <tr>
@@ -41,7 +40,7 @@
                     <tbody>
                         @foreach ($clientes as $cliente)
                     <tr>
-                <td scope="row" > <a href="{{route('cliente.show',$cliente->id)}}">{{$cliente->id}}</a></td>
+                <td scope="row" > <a href="{{route('radios.cliente.show',$cliente->id)}}">{{$cliente->id}}</a></td>
                         <td scope="row" >{{$cliente->nombre}}</td>
                         <td scope="row" >{{$cliente->ejecutivo}}</td>
                         <td scope="row" >{{$cliente->modalidad}}</td>

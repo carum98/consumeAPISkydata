@@ -36,4 +36,14 @@ class RadiosService
     {
         return $this->makeRequest('GET','cliente/'.$id);
     }
+
+    public function getClienteRadios($id)
+    {
+        return $this->makeRequest('GET',"cliente/{$id}/radios");
+    }
+
+    public function getUserInformation()
+    {
+        return $this->makeRequest('GET',"me");
+    }
 }

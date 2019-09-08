@@ -11,4 +11,10 @@ class ClienteController extends Controller
         $cliente = $this->radioService->getCliente($id);
         return view('cliente.show', compact('cliente'));
     }
+
+    public function showRadiosCliente($id)
+    {
+        $radios = $this->radioService->getClienteRadios($id);
+        return view('radio.listRadioCliente', compact('radios'));
+    }
 }

@@ -12,7 +12,7 @@ trait InteractResponse
     {
         $decodeResponse = json_decode($response);
         // dd($decodeResponse);
-        return $decodeResponse->data->data ?? $decodeResponse->data;
+        return $decodeResponse->data ?? $decodeResponse;
     }
 
     public function checkIfErrorRespose($response)
