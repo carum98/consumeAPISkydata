@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Traits;
+
+
+/**
+ * Trait para realizar la autorisacion
+ */
+trait AutorizesRequest
+{
+    public function resolveAutorization(&$queryParams, &$formParams, &$headers)
+    {
+        $accessToken = $this->resolveAccessToken;
+        $headers['Authorization'] = $accessToken;
+    }
+
+    public function resolveAccessToken()
+    {
+        return 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRiYWQxNjkwN2FmNjRkZDdlMjljNDljYmE4NTdiODFjYzczNzc5ZDM1NmMxYTA1N2ZjMzEwZGYzYjAwNDk0N2I4ZDQ2YTI5Yzg0ZmMzM2Q3In0.eyJhdWQiOiI2IiwianRpIjoiZGJhZDE2OTA3YWY2NGRkN2UyOWM0OWNiYTg1N2I4MWNjNzM3NzlkMzU2YzFhMDU3ZmMzMTBkZjNiMDA0OTQ3YjhkNDZhMjljODRmYzMzZDciLCJpYXQiOjE1Njc5MDc5MjIsIm5iZiI6MTU2NzkwNzkyMiwiZXhwIjoxNTk5NTMwMzIxLCJzdWIiOiIxIiwic2NvcGVzIjpbImNyZWF0ZS1yYWRpb3MiLCJjcmFldGUtY2xpZW50ZSIsInJlYWQtZ2VuZXJhbCJdfQ.kdLi214xzW8sP1zB-s3CEVxt5LRz_P9blm6vUPkyciZSKiT_HrczvYtWfhSgvg5LqV1x3F8kokEJ0F07rtiEp7ftJhWWPq4LJYLy_kMaiNfFT8_JdWFsx4G7-A1cWqAop8gx3UezOKB8L_wbvMJxNUQNbTrEXIcyjXwiVIVAkk6DWT9aurGljDLOOvpjRYLU1U8Qak86MaJEUP5DPIIwZP9CwwALNKcjk-8h6qcfc34eqEkkCNHGr3zwwwsopeR97sThp872qZfKkf22wQ1Bno47OPSa-kmryHmkYyF7jfVezyJ2nwGOwgjHTjx_gw_4GOVoH58vsuIFIW8_ibiGOPE9IHVHEqgDudZQOLs6Kj9HbL-eSqSdTtyypU-0YY21cxtoKjqw2P_72UXaxy8m1jQ8_zeeY9EzE_IjyQpnpIAsj_rstkRgICWqrpAihCmyTzlQfZn5o01a2gJcM2rZPnsClH0fXYhD_1haQEQTQuA9j3XbAyuit8fLUnVjpoE_aXYJbo_UFzWpCdRY_x2UYD53VYbKL9dUt8xLGBuQW0m0Qywl4V0FbpK9HzVGUBhVoegBMzJkllZ-NemMEGBcE8pTZMiDa_BcpSUIaCnqKj9Iy70mCq-74RICRLKpjN6ZJ8q59kWhQGi0F4YQRIHnUlfTlXrqOBO3iwe0VhNi4IY';
+    }
+}

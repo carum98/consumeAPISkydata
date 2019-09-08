@@ -20,6 +20,14 @@ return [
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
+    'skydata' => [
+        'base_uri' => env('SKYDATARADIOS_BASE_URI'),
+        'client_id' => env('SKYDATARADIOS_CLIENT_ID'),
+        'client_secret' => env('SKYDATARADIOS_CLIENT_SECRET'),
+        'password_client_id' => env('SKYDATARADIOS_PASSWORD_CLIENT_ID'),
+        'password_cliente_secret' => env('SKYDATARADIOS_PASSWORD_CLIENT_SECRET')
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],

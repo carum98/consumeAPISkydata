@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Traits;
+
+
+/**
+ * Trait para interactura con la respues
+ */
+trait InteractResponse
+{
+    public function decodeResponse($response)
+    {
+        $decodeResponse = json_decode($response);
+        return $decodeResponse->data ?? $decodeResponse;
+    }
+
+    public function checkIfErrorRespose($response)
+    {
+        if (isset($response->error)) {
+            throw new Exception("Algo Fallo: {$response->error}");
+        }
+    }
+}
