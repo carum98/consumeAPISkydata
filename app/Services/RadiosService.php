@@ -46,4 +46,9 @@ class RadiosService
     {
         return $this->makeRequest('GET',"me");
     }
+
+    public function createCliente($formParams)
+    {
+        return $this->makeRequest('POST','cliente',[],$formParams);
+    }
 }

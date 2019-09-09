@@ -17,4 +17,21 @@ class ClienteController extends Controller
         $radios = $this->radioService->getClienteRadios($id);
         return view('radio.listRadioCliente', compact('radios'));
     }
+
+    public function formCreateCliente()
+    {
+        return view('cliente.form');
+    }
+
+    public function createCliente(Request $request)
+    {
+        $formParams = [
+            'nombre' => $request->nombre,
+            'ejecutivo' => $request->ejecutivo,
+            'modalidad' => $request->modalidad
+        ];
+        // dd($formParams);
+        $this->radioService->createCliente($formParams);
+        return view('cliente.form');
+    }
 }
