@@ -51,4 +51,9 @@ class RadiosService
     {
         return $this->makeRequest('POST','cliente',[],$formParams);
     }
+    
+    public function createRadio($formParams)
+    {
+        return $this->makeRequest('POST', 'radio', [], $formParams);
+    }
 }

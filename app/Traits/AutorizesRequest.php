@@ -17,6 +17,9 @@ trait AutorizesRequest
     public function resolveAccessToken()
     {
         $autenticationService = resolve(AutenticationService::class);
+        if (auth()->user()) {
+            return $autenticationService->getAutenticatedUserToken();
+        }
         return $autenticationService->getClientCredencialsToken();
     }
 }

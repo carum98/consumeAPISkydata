@@ -54,7 +54,7 @@ class AutenticationService
             'client_id' => $this->clientId,
             'redirect_uri' => route('authorization'),
             'response_type' => 'code',
-            'scope' => 'create-cliente'
+            'scope' => 'create-radios'
         ]);
 
         return "{$this->baseUri}/oauth/authorize?{$query}";
@@ -100,5 +100,15 @@ class AutenticationService
 
         $this->storeValidToken($tokenData, 'password');
         return $tokenData;
+    }
+
+    public function getAutenticatedUserToken()
+    {
+        $user = auth()->user();
+        // dd($user);
+        if (now()->lt($user->expires_in)) {
+            # code...
+        }
+        return $user->access_token;
     }
 }

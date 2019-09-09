@@ -24,3 +24,7 @@ Route::get('/cliente/{id}/radios', 'ClienteController@showRadiosCliente')->name(
 
 Route::get('/crear/cliente', 'ClienteController@formCreateCliente')->name('form.cliente');
 Route::post('/create/cliente', 'ClienteController@createCliente')->name('crear.cliente');
+
+
+Route::get('/crear/radio', 'RadioController@formCreateRadio')->name('form.radio');
+Route::post('/create/radio', 'RadioController@createRadio')->name('crear.radio');

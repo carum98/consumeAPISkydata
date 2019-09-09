@@ -112,7 +112,7 @@ class LoginController extends Controller
             'grant_type' => $tokenData->grant_type,
             'access_token' => $tokenData->access_token,
             'refresh_token' => $tokenData->refresh_token,
-            'expires_in' => $tokenData->expires_in
+            'expires_in' => $tokenData->expires_in // TODO: Guardar valor como token_expires_at para poder utilizar el refresh token
         ]);
     }
 

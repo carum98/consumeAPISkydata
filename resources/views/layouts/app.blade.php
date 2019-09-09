@@ -33,9 +33,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        @auth
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('form.cliente')}}">Crear Cliente</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('form.radio')}}">Crear Radio</a>
+                        </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
