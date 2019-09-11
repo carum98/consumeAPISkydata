@@ -40,6 +40,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('form.radio')}}">Crear Radio</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('radio.list')}}">Lista de radios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('cliente.list')}}">Lista de clientes</a>
+                        </li>
                         @endauth
                     </ul>
 

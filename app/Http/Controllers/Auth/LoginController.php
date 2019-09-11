@@ -60,7 +60,7 @@ class LoginController extends Controller
             $userData = $this->radioService->getUserInformation();
             $user = $this->registerOrUpdateUser($userData, $tokenData);
             $this->loginUser($user);
-            return redirect()->intended('home');
+            return redirect()->route('welcome');
         }
 
         return redirect()->route('login')->withErrors(['Se cancelo la autorizacion']);

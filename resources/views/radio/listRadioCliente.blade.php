@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row">
+
     <div class="col-5">
+        <div class="row">
+            <h2 class="display-2">{{$cliente->nombre}}</h2>  
+        <a href="{{route('edit.cliente.form', $cliente->id)}}">Editar</a>
+        </div>
             <table class="table">
                 <thead>
                 <tr>
@@ -24,5 +28,4 @@
                 </tbody>
             </table>
         </div>    
-</div>
 @endsection

@@ -56,4 +56,19 @@ class RadiosService
     {
         return $this->makeRequest('POST', 'radio', [], $formParams);
     }
+
+    public function editRadio($formParams, $id)
+    {
+        return $this->makeRequest('PUT',"radio/{$id}",[],$formParams);
+    }
+
+    public function editCliente($formParams, $id)
+    {
+        return $this->makeRequest('PUT',"cliente/{$id}",[],$formParams);
+    }
+
+    public function informationUser()
+    {
+        return $this->makeRequest('GET','me');
+    }
 }

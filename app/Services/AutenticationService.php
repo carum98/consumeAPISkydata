@@ -54,7 +54,7 @@ class AutenticationService
             'client_id' => $this->clientId,
             'redirect_uri' => route('authorization'),
             'response_type' => 'code',
-            'scope' => 'create-radios'
+            'scope' => 'create-radios create-cliente'
         ]);
 
         return "{$this->baseUri}/oauth/authorize?{$query}";
